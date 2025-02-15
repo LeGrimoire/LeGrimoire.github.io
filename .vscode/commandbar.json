@@ -1,0 +1,26 @@
+{
+  "skipTerminateQuickPick": true,
+  "skipSwitchToOutput": false,
+  "skipErrorMessage": true,
+  "commands": [
+    {
+      "text": "Jekyll Serve",
+      "tooltip": "Serve UI",
+      "color": "yellow",
+      "command": "bundle exec jekyll serve --livereload",
+      "alignment": "left",
+      "skipTerminateQuickPick": false,
+      "priority": 0
+    },
+    {
+      "text": "🌐Localhost",
+      "tooltip": "Serve UI",
+      "color": "yellow",
+	  "commandType": "file",
+      "command": "http://localhost:4000",
+      "alignment": "left",
+      "skipTerminateQuickPick": false,
+      "priority": 0
+    }
+  ]
+}
