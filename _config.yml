@@ -19,20 +19,21 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Grégoire André
-email: your-email@example.com
+email: gregoir.andre@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+  Gameplay and Tool Programmer<br>8+ years of experience<br>Open to freelance or part-time
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: https://fongandrew.github.io # the base hostname & protocol for your site, e.g. http://example.com
+bluesky_username: legrimoire.bsky.social
+linkedin_username: gregoireandre1
+github_username: LeGrimoire
+itchio_username: LeGrimoire
+portrait: assets/argentique.jpg
 
 # Build settings
-theme: minima
+remote_theme: fongandrew/hydeout
 plugins:
-  - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
