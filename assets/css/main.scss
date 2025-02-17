@@ -29,27 +29,28 @@ $large-font-size: 1.1rem !default;
     position: relative;
     display: inline-block;
     line-height: 1.15;
+    margin: 0 0 .75rem;
 
     :before {
       content: "/ɡʁe.ɡwaʁ/";
       position: absolute;
-      top: -0.1em;
+      top: -0.2em;
       right: 1em;
       font-size: 0.35em;
       padding: 0;
       margin: 0;
       font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
       text-align: center;
-      color: #f79c9edd; //  rgba(255, 255, 255, 0.4)
+      color: #f79c9edd; // rgba(255, 255, 255, 0.4)
     }
 
     @media (min-width: $large-breakpoint) {
       line-height: 1.25;
       font-size: 2.5rem;
       padding-left: 1.0rem;
+      margin: 0 0 .5rem;
 
       :before {
-        top: -0.1em;
         left: 10.75em;
         right: unset;
       }
@@ -81,7 +82,7 @@ $large-font-size: 1.1rem !default;
     }
 
     em, strong {
-      color: rgba(255, 255, 255, 1.00);
+      color: rgba(255, 255, 255, .95);
     }
 
     .two-columns {
@@ -101,37 +102,42 @@ $large-font-size: 1.1rem !default;
         display: grid;
         grid-template-columns: 3.75rem auto;
         gap: .75rem;
-
-        :first-child {
-          padding-top: .25em;
-          line-height: 1.25em;
-        }
+        margin-bottom: .75rem;
 
         .two-columns {
           grid-template-columns: auto auto;
           gap: .5rem;
-
-          :first-child {
-            padding-top: unset;
-            line-height: unset;
-          }
         }
       }
     }
 
-    p {
+    .languages {
+      margin-bottom: 0rem;
+      display: grid;
+      grid-template-columns: auto auto;
+
+      @media (max-width: $large-breakpoint) {
+        :first-child {
+          text-align: right;
+        }
+        :not(:first-child) {
+          text-align: left;
+          padding-left: .5rem;
+        }
+      }
+
       @media (min-width: $large-breakpoint) {
-        margin-bottom: .5rem;
+        grid-template-columns: 3.75rem auto;
       }
     }
   }
 
   #sidebar-icon-links {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 
   #copyright {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 
   @media (min-width: $large-breakpoint) {
