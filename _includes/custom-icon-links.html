@@ -13,17 +13,24 @@
     {% include svg/itchio-logo-textless-black.svg %}
   </a>
 {% endif %}
-{% if site.bluesky_username %}
-  <a id="bluesky-link"
-    class="icon" title="Bluesky Profile" aria-label="Bluesky Profile"
-    href="https://bsky.app/profile/{{ site.bluesky_username }}">
-    {% include svg/bluesky_logo.svg %}
-  </a>
-{% endif %}
 {% if site.linkedin_username %}
   <a id="linkedin-link"
     class="icon" title="LinkedIn Profile" aria-label="LinkedIn Profile"
     href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
     {% include svg/linkedin_logo.svg %}
+  </a>
+{% endif %}
+{% if site.instagram_username %}
+  <a id="instagram-link"
+    class="icon" title="Instagram Profile" aria-label="Instagram Profile"
+    href="https://www.instagram.com/{{ site.instagram_username }}">
+    {% include svg/instagram_logo.svg %}
+  </a>
+{% endif %}
+{% if site.bluesky_username %}
+  <a id="bluesky-link"
+    class="icon" title="Bluesky Profile" aria-label="Bluesky Profile"
+    href="https://bsky.app/profile/{{ site.bluesky_username }}">
+    {% include svg/bluesky_logo.svg %}
   </a>
 {% endif %}
