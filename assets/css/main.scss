@@ -15,7 +15,7 @@ $large-font-size: 1.1rem !default;
 
 @import "hydeout";
 
-.home #sidebar, :not(.home) #sidebar  {
+.home #sidebar, .home.index #sidebar, :not(.home) #sidebar  {
   nav * {
     margin-top: 0;
   }
@@ -69,14 +69,15 @@ $large-font-size: 1.1rem !default;
 
       li {
         list-style-type: "";
-        list-style-position: inside;
+        // list-style-position: inside;
       }
 
       @media (min-width: $large-breakpoint) {
-        padding-inline-start: 20px;
+        padding-inline-start: 10px;
 
         li {
-          list-style-type: "- ";
+          list-style-type: "-";
+          padding-left: 10px;
         }
       }
     }
@@ -86,7 +87,8 @@ $large-font-size: 1.1rem !default;
     }
 
     .two-columns {
-      margin-bottom: .5rem;
+      margin-bottom: .75rem;
+      line-height: 1.65;
 
       > *,
       .two-columns {
@@ -140,22 +142,34 @@ $large-font-size: 1.1rem !default;
     font-size: 0.75rem;
   }
 
+  :not(header) .lead {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
   @media (min-width: $large-breakpoint) {
     @if not $sidebar-sticky {
       height: 100%;
       overflow-y: auto;
     }
 
+    padding-bottom: 1.5rem;
+
     font-size: .8rem;
 
-    .lead {
+    header .lead {
       font-size: 1.1rem;
+    }
+
+    :not(header) .lead {
+      font-size: 1.0rem;
+      line-height: 1.5;
     }
   }
 }
 
 @media (min-width: $large-breakpoint) {
-  #sidebar, .home #sidebar {
+  .home #sidebar, :not(.home) #sidebar {
     width: 21rem;
   }
 
