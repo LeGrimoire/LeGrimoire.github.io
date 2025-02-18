@@ -36,7 +36,7 @@ $large-font-size: 1.1rem !default;
       position: absolute;
       top: -0.2em;
       right: 1em;
-      font-size: 0.35em;
+      font-size: 1.0rem;
       padding: 0;
       margin: 0;
       font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
@@ -46,13 +46,15 @@ $large-font-size: 1.1rem !default;
 
     @media (min-width: $large-breakpoint) {
       line-height: 1.25;
-      font-size: 2.5rem;
+      font-size: 2.0rem;
       padding-left: 1.0rem;
       margin: 0 0 .5rem;
 
       :before {
-        left: 10.75em;
+        left: 0.75em;
+        top: 2.75em;
         right: unset;
+        font-size: .75rem;
       }
     }
   }
@@ -106,9 +108,17 @@ $large-font-size: 1.1rem !default;
         gap: .75rem;
         margin-bottom: .75rem;
 
+        :first-child {
+          text-align: right;
+        }
+
         .two-columns {
           grid-template-columns: auto auto;
           gap: .5rem;
+
+          :first-child {
+            text-align: unset;
+          }
         }
       }
     }
@@ -140,6 +150,10 @@ $large-font-size: 1.1rem !default;
 
   #copyright {
     font-size: 0.75rem;
+  }
+
+  .lead {
+    margin-bottom: .65rem !important;
   }
 
   :not(header) .lead {
