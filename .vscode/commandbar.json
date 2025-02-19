@@ -5,18 +5,25 @@
   "commands": [
     {
       "text": "Jekyll Serve",
-      "tooltip": "Serve UI",
       "color": "yellow",
-      "command": "bundle exec jekyll serve --livereload",
+      "command": "bundle exec jekyll serve -c _config_local.yml --livereload",
+      "alignment": "left",
+      "skipTerminateQuickPick": false,
+      "priority": 0
+    },
+    {
+      "text": "Jekyll Build",
+      "color": "yellow",
+      "command": "bundle exec jekyll build -c _config_local.yml",
       "alignment": "left",
       "skipTerminateQuickPick": false,
       "priority": 0
     },
     {
       "text": "🌐Localhost",
-      "tooltip": "Serve UI",
+      "tooltip": "Open in browser",
       "color": "yellow",
-	  "commandType": "file",
+      "commandType": "file",
       "command": "http://localhost:4000",
       "alignment": "left",
       "skipTerminateQuickPick": false,
