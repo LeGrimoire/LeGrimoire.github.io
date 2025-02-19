@@ -31,6 +31,10 @@ github_username: LeGrimoire
 itchio_username: LeGrimoire
 portrait: assets/portrait.jpg
 
+author:
+  name: 'Grégoire André'
+  url: https://legrimoire.github.io
+
 # Build settings
 remote_theme: fongandrew/hydeout
 plugins:
