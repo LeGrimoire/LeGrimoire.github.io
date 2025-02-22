@@ -1,0 +1,18 @@
+<!-- Optional footer content -->
+<script src="https://unpkg.com/zooming/build/zooming.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  // Listen to images after DOM content is fully loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming(
+      {
+        customSize: "66%",
+        enableGrab: false,
+        scaleExtra: .5,
+        scrollThreshold: 1
+      }
+    )
+
+    zooming.listen('.img-zoomable')
+  })
+
+</script>
