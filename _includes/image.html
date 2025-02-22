@@ -11,16 +11,21 @@
 {%- endif -%}
 
 <!--
-{{ img_name }}
-{{ img_detail_file }}
 {{ site.static_files }}
-{%- assign a = site.static_files | where:"basename", img_name %}
-{{ a }}
-{%- assign b = site.static_files | where:"basename", img_name | find_exp:"item", "item.path contains '/full/'" %}
-{{ b }}
+{{ img_name }}
+detail
+{{ img_detail_file }}
 {{ img_detail_file.path }}
 {{ img_detail_path }}
+a
+{%- assign a = site.static_files | where:"basename", img_name | first %}
+{{ a }}
+b
+{%- assign b = site.static_files | where:"basename", img_name | find_exp:"item", "item.path contains '/full/'" | first %}
+{{ b }}
+file
 {{ img_file }}
+path
 {{ img_path }}
 for f in site.static_files
 {%- for f in site.static_files %}
