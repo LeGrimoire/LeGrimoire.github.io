@@ -5,17 +5,25 @@
   {%- assign img_detail_path = img_detail_file.path -%}
   {%- assign img_path = img_detail_path | replace:"/full/", "/" -%}
 {%- else -%}
-  {%- assign img_file = site.static_files | find:"basename", img_name -%}
   {%- assign img_detail_path = nil -%}
+  {%- assign img_file = site.static_files | find:"basename", img_name -%}
   {%- assign img_path = img_file.path -%}
 {%- endif -%}
 
 <!--
 {{ img_name }}
 {{ img_detail_file }}
+{{ site.static_files }}
+{%- assign a = site.static_files | where:"basename", img_name %}
+{{ a }}
+{%- assign b = site.static_files | where:"basename", img_name | find_exp:"item", "item.path contains '/full/'" %}
+{{ b }}
+{{ img_detail_file.path }}
 {{ img_detail_path }}
+{{ img_file }}
 {{ img_path }}
-{% for f in site.static_files %}
+for f in site.static_files
+{%- for f in site.static_files %}
 {{ f }}
 {{ f.path }}
 {% endfor %}
