@@ -10,7 +10,9 @@
   {%- assign img_path = img_file.path -%}
 {%- endif -%}
 
-{%- if img_path -%}
+<!-- {{ site.static_files }} -->
+
+{%- if img_path and img_path > "" -%}
   {%- assign img_alt = include.name | split: "-" | last |  capitalize | replace: "_", " " | first -%}
 
   {%- if img_detail_path -%}
