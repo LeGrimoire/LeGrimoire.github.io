@@ -2,7 +2,7 @@
 <div class="experience">
   <div class="experience-core">
     {%- if include.skills -%}
-      <div class="experience-skills">
+      <div class="experience-skills no-mobile">
         <ul>
           {%- assign accent = true -%}
           {%- assign skills = include.skills | split: ", " -%}
@@ -51,16 +51,34 @@
         {{- desc -}}
       </div>
     </div>
+
+    {%- if include.skills -%}
+      <div class="experience-skills mobile">
+        <ul>
+          {%- assign accent = true -%}
+          {%- assign skills = include.skills | split: ", " -%}
+          {%- for skill in skills -%}
+            {%- if skill == "" -%}
+              {%- assign accent = false -%}
+              {%- continue -%}
+            {%- endif -%}
+            <li {% if accent %}class="accent"{% endif %}>{{- skill }}{%-  unless forloop.last -%}</li>{%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
   </div>
 
   {%- if include.project -%}
     <div class="experience-project">
-      <div class="project-imgs">
-        {%- assign imgs = include.project_img | split: ", " -%}
-        {%- for img in imgs -%}
-          {%- include image.html name=img -%}
-        {%- endfor -%}
-      </div>
+      {%- if include.project_img -%}
+        <div class="project-imgs">
+          {%- assign imgs = include.project_img | split: ", " -%}
+          {%- for img in imgs -%}
+            {%- include image.html name=img -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
 
       <div class="project-header">
         <h4>{{ include.project }}</h4>
