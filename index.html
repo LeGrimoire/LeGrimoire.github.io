@@ -11,23 +11,25 @@ title: Home
   Sociable (organized events as a board member of several associations)
 {%- endcomment -%}
 
-<h2>Experiences</h2>
+{% comment %}
+<h2>About me</h2>
 
-{%- comment -%}
-  Dynamically generate list of experiences.
-{%- endcomment -%}
+TODO
+{% endcomment %}
+
+<h2>Experiences</h2>
 
 {%- include experience.html
   position="Gameplay, Tools and UI Freelance Programmer"
   company=""
-  begin="Dec 23"
-  end="Mar 25"
+  begin="Dec 2023"
+  end="Mar 2025"
   length="1 yr 3 mos"
   location="Paris, France"
   is_remote=true
-  desc="As the only programmer on the game, I first created prototypes and tools for the artists. Then during production, I implemented card fights and all the UI. Moreover, I was responsible for Steam's build pipeline configuration."
-  skills="Python, Ren'Py, Shaders, Steam, Git"
-  project="**** and Cards"
+  desc="As the sole programmer on the game, created prototypes and tools to streamline integrations for the artists. During production, implemented card fights and all the UI. Moreover, was responsible for Steam's build pipeline configuration."
+  skills="Python, Ren'Py, Shaders, , Steam, Git"
+  project="P*** and Cards"
   project_desc="Card game with board tactics in an adult-themed visual novel."
   project_links="Steam|svg/steam_logo.svg|https://store.steampowered.com/app/3017700/Porn_and_Cards"
   project_img="p_and_c-fight_and_inventory"
@@ -36,13 +38,13 @@ title: Home
 {%- include experience.html
   position="UI Freelance Programmer"
   company="Nimble Giant Entertainment"
-  begin="Feb 23"
-  end="Jun 23"
+  begin="Feb 2023"
+  end="Jun 2023"
   length="5 mos"
   location="Buenos Aires, Argentina"
   is_remote=true
-  desc="In collaboration with the artists, I integrated a lot of mid-sized menus. I also worked on the map and its interface, optimizing it to be readable at different zoom levels. Development was done on Paradox's legacy game engine."
-  skills="C++, UX, Git"
+  desc="Collaborated with the artists to integrate mid-sized menus. Also worked on the map and its interface, optimizing it to be readable at different zoom levels. Development was done on Paradox's legacy game engine."
+  skills="C++, UX, , Git"
   project="Star Trek: Infinite"
   project_desc="A 4X based on Stellaris."
   project_links="Steam|svg/steam_logo.svg|https://store.steampowered.com/app/1622900/Star_Trek_Infinite/"
@@ -52,13 +54,12 @@ title: Home
 {%- include experience.html
   position="Solo Developer"
   company=nil
-  begin="Nov 20"
-  end="Aug 22"
+  begin="Nov 2020"
+  end="Aug 2022"
   length="1 yr 10 mos"
   location="France"
-  is_remote=false
-  desc="Full creation of the game - code, art and writing - with Heaps (Shiro Games' engine) then release on Steam. This&nbsp;was a deeply personal project."
-  skills="Haxe, Shaders, Steam, Git"
+  desc="Fully created the game, including code, art and writing, using Heaps (Shiro Games' engine) followed by its release on Steam. A deeply personal project."
+  skills="Haxe, Shaders, Steam, , Git"
   project="In Your Books"
   project_desc="Short narrative experience with puzzles."
   project_links="Steam|svg/steam_logo.svg|https://store.steampowered.com/app/1681310/In_Your_Books/"
@@ -68,13 +69,12 @@ title: Home
 {%- include experience.html
   position="Gameplay and UI Programmer"
   company="Eko Software"
-  begin="Sep 17"
-  end="Oct 20"
+  begin="Sep 2017"
+  end="Oct 2020"
   length="3 yr 2 mos"
   location="Paris, France"
-  is_remote=false
-  desc="Within a proprietary engine, in collaboration with the GDs and LDs, I developed the quest, loot and craft systems and tools as well as the associated menus. I participated in the porting to Playstations and Xbox and was responsible for integration of non-latin languages."
-  skills="C++, Multiplayer, Jenkins, Perforce"
+  desc="Worked within a proprietary engine with the GDs and LDs to develop the quest, loot and craft systems, along with tools and menus. Contributed to porting the game to Playstation 4, 5, and Xbox and was in charge of integration of non-latin languages.<br>Setup Jenkins to generate builds for the artists and designers."
+  skills="C++, Online or, Local coop, Jenkins, , Perforce"
   project="Warhammer: Chaosbane"
   project_desc="Hack & slash with up to 4 players online and/or offline."
   project_links="Steam|svg/steam_logo.svg|https://store.steampowered.com/app/774241/Warhammer_Chaosbane/"
@@ -84,15 +84,14 @@ title: Home
 {%- include experience.html
   position="Tools Programmer"
   company="Eko Software"
-  begin="Apr 16"
-  end="Sep 17"
+  begin="Apr 2016"
+  end="Sep 2017"
   length="1 yr 6 mos"
   location="Paris, France"
-  is_remote=false
-  desc="- Built a tool to deform skeletons and meshes for a quick integration of 2000+ rugby players.<br>- Produced an optimized system to display the public thanks to instancing and shader animations.<br>- AI programming to ensure accurate team behavior."
-  skills="C++, Multiplayer, Shaders, Perforce"
+  desc="Built a tool to deform skeletons and meshes, enabling the quick integration of 2000+ rugbymen. Produced an optimized system for audience rendering using instancing and shader animations.<br>Created state based AI for accurate team behavior."
+  skills="C++, Shaders, Multiplayer, , Perforce"
   project="Rugby 18"
-  project_desc="Sport simulation with local or online versus and a solo mode. Integrations of most licensed pro players."
+  project_desc="Sport simulation with local or online versus and a solo mode. Contains most licensed pro players of the year."
   project_links="Steam|svg/steam_logo.svg|https://store.steampowered.com/app/627450/RUGBY_18/"
   project_img=nil
 -%}
@@ -100,12 +99,11 @@ title: Home
 {%- include experience.html
   position="Intern Programmer"
   company="KT Racing"
-  begin="May 15"
-  end="Aug 15"
+  begin="May 2015"
+  end="Aug 2015"
   length="4 mos"
   location="Paris, France"
-  is_remote=false
-  desc="- Car destruction and degradation<br>- Tools for the Sound Designers"
+  desc="Car destruction and degradation<br>Tools for sound designers"
   skills="C++, C#"
   project="WRC 5"
   project_desc="Rally game with an emphasis on physics simulation."
@@ -113,10 +111,25 @@ title: Home
   project_img=nil
 -%}
 
+{% comment %}
 <h2>Personal projects</h2>
 
 TODO
+{% endcomment %}
 
 <h2>Education</h2>
 
-TODO
+{%- include experience.html
+  position="Master of Engineering (M.Eng.), Information Technology"
+  company="Efrei Paris"
+  begin="2011"
+  end="2016"
+  desc="Major: Imagery and Virtual reality, specialty in video game development.<br>Activities: Vice-President of Efrei Sport Climbing (2014),<br/>Webmaster (2012-15) and Vice-President (2013) of Asian Efrei."
+-%}
+
+{%- include experience.html
+  position="Master of Engineering (M.Eng.), Information Technology"
+  company="Université du Québec à Chicoutimi"
+  begin="2015"
+  desc="Completed a 4-months program focused on video game development, AI, programming languages creation and advanced data structures."
+-%}
