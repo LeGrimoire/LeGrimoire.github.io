@@ -6,13 +6,6 @@
     {% include svg/github.svg %}
   </a>
 {% endif %}
-{% if site.itchio_username %}
-  <a id="itchio-link"
-    class="icon" title="Itch.io Profile" aria-label="Itch.io Profile"
-    href="https://{{ site.itchio_username }}.itch.io">
-    {% include svg/itchio-logo-textless-black.svg %}
-  </a>
-{% endif %}
 {% if site.linkedin_username %}
   <a id="linkedin-link"
     class="icon" title="LinkedIn Profile" aria-label="LinkedIn Profile"
@@ -32,5 +25,12 @@
     class="icon" title="Bluesky Profile" aria-label="Bluesky Profile"
     href="https://bsky.app/profile/{{ site.bluesky_username }}">
     {% include svg/bluesky_logo.svg %}
+  </a>
+{% endif %}
+{% if site.itchio_username %}
+  <a id="itchio-link"
+    class="icon" title="Itch.io Profile" aria-label="Itch.io Profile"
+    href="https://{{ site.itchio_username }}.itch.io">
+    {% include svg/itchio-logo-textless-black.svg %}
   </a>
 {% endif %}
