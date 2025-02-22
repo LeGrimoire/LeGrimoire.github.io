@@ -112,6 +112,7 @@ a svg,
   :not(header) .lead {
     font-size: 1.15rem;
     line-height: 1.5;
+    align-self: center;
   }
 
   @media (min-width: $large-breakpoint) {
@@ -126,8 +127,6 @@ a svg,
   }
 
   #sidebar-nav-links {
-    align-items: center;
-
     h2 {
       font-size: 1.0rem;
       color: rgba(255, 255, 255, 1.00);
