@@ -16,8 +16,8 @@
   {%- assign img_alt = include.name | split: "-" | last |  capitalize | replace: "_", " " | first -%}
 
   {%- if img_detail_path -%}
-    <img src="{{ img_path }}" data-original="{{ img_detail_path  }}" alt="{{ img_alt }}" class="img-zoomable" />
+    <img src="{{ img_path | relative_url }}" data-original="{{ img_detail_path  }}" alt="{{ img_alt }}" class="img-zoomable" />
   {%- else -%}
-    <img src="{{ img_path }}" alt="{{ img_alt }}" class="img-zoomable" />
+    <img src="{{ img_path | relative_url }}" alt="{{ img_alt }}" class="img-zoomable" />
   {%- endif -%}
 {%- endif -%}
