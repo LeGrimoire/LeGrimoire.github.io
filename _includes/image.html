@@ -13,9 +13,18 @@
 <!--
 {{ img_name }}
 {{ img_detail_file }}
+{{ site.static_files | where:"basename", img_name }}
+{{ site.static_files | where:"basename", img_name | find_exp:"item", "item.path contains '/full/'" }}
+{{ img_detail_file }}
+for f in img_detail_file
+{%- for f in img_detail_file %}
+{{ f }}
+{%- endfor %}
+endfor
 {{ img_detail_path }}
 {{ img_path }}
-{% for f in site.static_files %}
+for f in site.static_files
+{%- for f in site.static_files %}
 {{ f }}
 {{ f.path }}
 {% endfor %}
