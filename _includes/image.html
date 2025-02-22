@@ -1,37 +1,47 @@
 {%- assign img_name = include.name -%}
-{%- assign img_detail_file = site.static_files | where:"basename", img_name | find_exp:"item", "item.path contains '/full/'" -%}
+{%- assign img_path = nil -%}
+{%- assign img_detail_path = nil -%}
+
+{%- for f in site.static_files -%}
+  {%- if f.basename == img_name -%}
+    {%- if f.path contains "/full/" -%}
+      {%- assign img_detail_path = f.path -%}
+    {%- else -%}
+      {%- assign img_path = f.path -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{% comment %} {%- assign img_detail_file = site.static_files | where:"basename", img_name | find_exp:"item", "item.path contains '/full/'" -%}
 
 {%- if img_detail_file -%}
   {%- assign img_detail_path = img_detail_file.path -%}
   {%- assign img_path = img_detail_path | replace:"/full/", "/" -%}
 {%- else -%}
-  {%- assign img_detail_path = nil -%}
   {%- assign img_file = site.static_files | find:"basename", img_name -%}
   {%- assign img_path = img_file.path -%}
-{%- endif -%}
+{%- endif -%} {% endcomment %}
 
 <!--
 {{ site.static_files }}
 {{ img_name }}
 detail
-{{ img_detail_file }}
-{{ img_detail_file.path }}
 {{ img_detail_path }}
+file
+{{ img_path }}
 a
 {%- assign a = site.static_files | where:"basename", img_name | first %}
 {{ a }}
+{{ a.path }}
 b
 {%- assign b = site.static_files | where:"basename", img_name | find_exp:"item", "item.path contains '/full/'" | first %}
 {{ b }}
-file
-{{ img_file }}
-path
-{{ img_path }}
+{{ b.path }}
 for f in site.static_files
 {%- for f in site.static_files %}
 {{ f }}
 {{ f.path }}
-{% endfor %}
+{%- endfor -%}
 -->
 
 {%- if img_path and img_path > "" -%}
