@@ -29,6 +29,8 @@ $large-font-size: 1.1rem !default;
 
 $large-breakpoint: 57rem !default;
 
+$code-font-family: 'Victor Mono', Menlo, Monaco, 'Courier New', monospace !default;
+
 @import "hydeout";
 
 a svg,
@@ -276,6 +278,7 @@ a svg,
     }
   }
 }
+
 @media (min-width: $large-breakpoint) {
   .home .maindiv, :not(.home) .maindiv {
     margin: 0 auto;
@@ -384,7 +387,8 @@ a svg,
 
       .experience-skills {
         font-size: .9rem;
-        color: $gray-3;
+        color: $gray-4;
+        font-weight: 100;
 
         ul {
           list-style: none;
@@ -400,15 +404,19 @@ a svg,
 
           .accent {
             color: $gray-5;
+            font-weight: 400;
           }
 
           .accent:first-child {
-            font-weight: 500;
+            color: $gray-6;
+            font-weight: 700;
           }
         }
 
         @media (min-width: $large-breakpoint) {
-          font-size: .8rem;
+          font-size: .7rem;
+          line-height: 1.7;
+          font-family: $code-font-family;
 
           ul {
             display: block;
@@ -523,6 +531,11 @@ a svg,
     }
   }
 }
+
+
+//---------------------
+// -- Mobile hide/show
+//---------------------
 
 @media (max-width: $large-breakpoint) {
   .no-mobile {
