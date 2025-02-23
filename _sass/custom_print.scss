@@ -38,6 +38,10 @@
 }
 
 
+body {
+  background: none !important;
+}
+
 #sidebar {
   background: none !important;
   border-right: solid .25rem $sidebar-bg-color !important;
@@ -92,14 +96,14 @@
 
     > h2:first-child {
       // display: none !important;
-        margin-top: 0.5rem !important;
+      // margin-top: 0.5rem !important;
     }
   }
 
   h2 {
     font-size: 1.3rem !important;
     // font-weight: 400 !important;
-    margin-top: .75rem !important;
+    margin-top: 1rem !important;
   }
 
   h3 {
@@ -137,7 +141,7 @@
       }
 
       .experience-skills {
-        margin: 0 -0.95rem 0.5rem 0.75rem !important;
+        margin: 0 -0.95rem 0.25rem 0.75rem !important;
         padding: 0.1rem 0.75rem 0.15rem 0 !important;
       }
     }
