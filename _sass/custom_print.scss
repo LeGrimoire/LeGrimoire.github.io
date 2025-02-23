@@ -1,0 +1,166 @@
+
+//---------------------
+// -- Print
+//---------------------
+
+
+// img.dark {
+//   filter: invert(100%) hue-rotate(180deg) brightness(120%) contrast(150%);
+// }
+
+// a::after {
+//   content: " (" attr(href) ")";
+// }
+
+
+// Simulate A4
+// html {
+//   width: 210mm; // 793.698
+//   height: 297mm; // 1122.510
+// }
+// Simulate Letter
+// html {
+//   width: 8.5in; // 816
+//   height: 11in; // 1056
+// }
+
+@page {
+  margin: 0;
+}
+
+.no-print {
+  display: none !important;
+}
+
+* {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+
+#sidebar {
+  background: none !important;
+  border-right: solid .25rem $sidebar-bg-color !important;
+  padding: 3rem 1.5rem 3rem 2.5rem !important;
+
+  * {
+    color: $gray-6 !important;
+    fill: $gray-6 !important;
+  }
+
+  .site-title {
+    font-size: 2.25rem !important;
+    padding-left: 0 !important;
+
+    * {
+      color: $sidebar-bg-color !important;
+    }
+
+    :before {
+      top: 3.1em !important;
+      left: 0.1em !important;
+      color: $gray-2 !important;
+    }
+  }
+
+  .lead, .lead * {
+    color: black !important;
+  }
+
+  .two-columns :first-child {
+    color: $gray-4 !important;
+  }
+  .two-columns .two-columns *,
+  .two-columns :not(:first-child) {
+    color: $gray-6 !important;
+  }
+
+  #sidebar-icon-links {
+    margin: auto 0 0 -.5rem !important;
+  }
+
+  #copyright {
+    display: none !important;
+  }
+}
+
+.container {
+  padding: 3rem 3.5rem 0 22.5rem !important;
+
+  .content {
+    padding: 0 !important;
+
+    > h2:first-child {
+      // display: none !important;
+        margin-top: 0.5rem !important;
+    }
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+    // font-weight: 400 !important;
+    margin-top: .75rem !important;
+  }
+
+  h3 {
+    font-size: 1.05rem !important;
+    font-weight: 400 !important;
+    margin: .75rem 0 0.15rem !important;
+  }
+
+  p {
+    font-weight: 350 !important;
+  }
+
+  .experience {
+    padding-bottom: .25rem !important;
+
+    .experience-core {
+      .experience-company, .experience-company * {
+        color: $gray-4 !important;
+        font-size: .78rem !important;
+        font-weight: 300 !important;
+
+        strong {
+          font-weight: 400 !important;
+        }
+      }
+
+      .experience-location {
+        color: $gray-4 !important;
+        font-size: .75rem !important;
+        font-weight: 300 !important;
+      }
+
+      .experience-description {
+        font-size: .825rem !important;
+      }
+
+      .experience-skills {
+        margin: 0 -0.95rem 0.5rem 0.75rem !important;
+        padding: 0.1rem 0.75rem 0.15rem 0 !important;
+      }
+    }
+
+    .experience-project {
+      width: 25% !important;
+
+      .project-imgs {
+        display: none !important;
+      }
+
+      h4 {
+        color: $gray-6 !important;
+        font-size: .81rem !important;
+        font-weight: 400 !important;
+      }
+
+      .project-description {
+        // color: $gray-5 !important;
+        font-size: .75rem !important;
+        font-weight: 350 !important;
+        margin-top: .2rem !important;
+      }
+    }
+  }
+}

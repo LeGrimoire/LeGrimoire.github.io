@@ -6,6 +6,7 @@
     "editor.defaultFormatter": "sissel.shopify-liquid",
     "editor.formatOnSave": false
   },
+  "scss.lint.emptyRules": "ignore",
 	"files.associations": {
     "*.md": "liquid",
     "*.html": "liquid"
