@@ -1,38 +1,38 @@
 <h3>{{ include.position }}</h3>
 <div class="experience">
+  {%- if include.project -%}
+    <div class="experience-project">
+      {%- if include.project_img -%}
+        <div class="project-imgs">
+          {%- assign imgs = include.project_img | split: ", " -%}
+          {%- for img in imgs -%}
+            {%- include image.html name=img -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
 
-{%- if include.project -%}
-  <div class="experience-project">
-    {%- if include.project_img -%}
-      <div class="project-imgs">
-        {%- assign imgs = include.project_img | split: ", " -%}
-        {%- for img in imgs -%}
-          {%- include image.html name=img -%}
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
+      <div class="project-header">
+        <h4>{{ include.project }}</h4>
 
-    <div class="project-header">
-      <h4>{{ include.project }}</h4>
-
-      <div class="project-links">
-        {%- assign links = include.project_links | split: ", " -%}
-        {%- for link_info in links -%}
-          {%- assign link_array = link_info | split: "|" -%}
-          {%- assign icon = link_array[1] -%}
-          <a class="icon project-link" title="{{- link_array[0] -}}" aria-label="{{- link_array[0] -}}"
-            href="{{- link_array[2] -}}">
-            {%- include {{ icon }} -%}
+        <div class="project-links">
+          {%- assign links = include.project_links | split: ", " -%}
+          {%- for link_info in links -%}
+            {%- assign link_array = link_info | split: "|" -%}
+            {%- assign icon = link_array[1] -%}
+            <a class="icon project-link" title="{{- link_array[0] -}}" aria-label="{{- link_array[0] -}}"
+              href="{{- link_array[2] -}}">
+              {%- include {{ icon }} -%}
             </a>
-        {%- endfor -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="project-description">
+        {{- include.project_desc -}}
       </div>
     </div>
+  {%- endif -%}
 
-    <div class="project-description">
-      {{ include.project_desc }}
-    </div>
-  </div>
-{%- endif -%}
   <div class="experience-core">
     {%- if include.skills -%}
       <div class="experience-skills no-mobile">

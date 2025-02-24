@@ -2,6 +2,7 @@
 {% if site.github_username %}
   <a id="github-link"
     class="icon" title="Github Project" aria-label="Github Project"
+    username="{{ site.github_username }}"
     href="https://github.com/{{ site.github_username }}">
     {% include svg/github.svg %}
   </a>
@@ -9,6 +10,7 @@
 {% if site.linkedin_username %}
   <a id="linkedin-link"
     class="icon" title="LinkedIn Profile" aria-label="LinkedIn Profile"
+    username="{{ site.linkedin_username }}"
     href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
     {% include svg/linkedin_logo.svg %}
   </a>
@@ -16,6 +18,7 @@
 {% if site.instagram_username %}
   <a id="instagram-link"
     class="icon" title="Instagram Profile" aria-label="Instagram Profile"
+    username="{{ site.instagram_username }}"
     href="https://www.instagram.com/{{ site.instagram_username }}">
     {% include svg/instagram_logo.svg %}
   </a>
@@ -23,6 +26,7 @@
 {% if site.bluesky_username %}
   <a id="bluesky-link"
     class="icon" title="Bluesky Profile" aria-label="Bluesky Profile"
+    username="{{ site.bluesky_username }}"
     href="https://bsky.app/profile/{{ site.bluesky_username }}">
     {% include svg/bluesky_logo.svg %}
   </a>
@@ -30,6 +34,7 @@
 {% if site.itchio_username %}
   <a id="itchio-link"
     class="icon" title="Itch.io Profile" aria-label="Itch.io Profile"
+    username="{{ site.itchio_username }}"
     href="https://{{ site.itchio_username }}.itch.io">
     {% include svg/itchio-logo-textless-black.svg %}
   </a>

@@ -1,7 +1,25 @@
+<div id="pdf-links">
+  {% if site.pdf_a4 %}
+    <a id="pdf-A4-link"
+      class="icon no-print" title="Pdf A4" aria-label="Pdf A4"
+      href="{{ site.pdf_a4 | relative_url }}">
+      {% include svg/pdf-logo.svg %}<span>A4</span>
+    </a>
+  {% endif %}
+  {% if site.pdf_letter %}
+    <a id="pdf-letter-link"
+      class="icon no-print" title="Pdf letter" aria-label="Pdf letter"
+      href="{{ site.pdf_letter | relative_url }}">
+      {% include svg/pdf-logo.svg %}<span>Letter</span>
+    </a>
+  {% endif %}
+</div>
+
 <div id="sidebar">
   {% if site.portrait %}
     <img id="portrait" src="{{ site.portrait | relative_url }}">
   {% endif %}
+
   <header>
     <{% if page.layout == "index" %}h1{% else %}div{% endif %} class="site-title">
       <a href="{{ "/" | relative_url }}">
@@ -13,12 +31,17 @@
     </{% if page.layout == "index" %}h1{% else %}div{% endif %}>
     <p class="lead">{{ site.description }}</p>
   </header>
+
   {% include sidebar-nav-links.html %}
+
+  {% if site.email or page.email %}
+    <div id="email"></div>
+  {% endif %}
+
+  {% include sidebar-icon-links.html %}
 
   {% if site.version %}
     <span class="site-version">Currently v{{ site.version }}</span>
   {% endif %}
-
-  {% include sidebar-icon-links.html %}
   {% include copyright.html %}
 </div>

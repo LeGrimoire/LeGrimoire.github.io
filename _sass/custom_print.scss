@@ -67,8 +67,23 @@ body {
     }
   }
 
+  #email a {
+    position: absolute;
+    top: 7.5rem;
+    left: 0;
+    right: 0;
+    // color: $link-color !important;
+    // text-align: center;
+    font-weight: 600 !important;
+  }
+
+  header .lead {
+    margin-top: 2.5rem;
+  }
+
   .lead, .lead * {
     color: black !important;
+    margin-bottom: .5rem;
   }
 
   .two-columns :first-child {
@@ -81,6 +96,22 @@ body {
 
   #sidebar-icon-links {
     margin: auto 0 0 -.5rem !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+    flex-direction: column !important;
+
+    a {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+
+      margin: .5rem 1rem !important;
+    }
+    a:after {
+      content: attr(username);
+      font-size: .8rem;
+      margin-left: .5rem;
+    }
   }
 
   #copyright {
