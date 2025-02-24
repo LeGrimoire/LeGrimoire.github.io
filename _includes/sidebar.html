@@ -34,8 +34,10 @@
 
   {% include sidebar-nav-links.html %}
 
-  {% if site.email or page.email %}
-    <div id="email"></div>
+  {% if site.email %}
+    <div id="email">{{ site.email | mailObfuscate }}</div>
+  {% elsif page.email %}
+    <div id="email">{{ page.email | mailObfuscate }}</div>
   {% endif %}
 
   {% include sidebar-icon-links.html %}
