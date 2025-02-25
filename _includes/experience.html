@@ -1,5 +1,5 @@
 <h3>{{ include.position }}</h3>
-<div class="experience">
+<div class="experience {% if include.project_img %}with-imgs{%- endif -%}">
   {%- if include.project -%}
     <div class="experience-project">
       {%- if include.project_img -%}

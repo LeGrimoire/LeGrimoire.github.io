@@ -36,6 +36,7 @@
 
 body {
   background: none !important;
+  min-height: unset !important;
 }
 
 #sidebar {
@@ -116,7 +117,12 @@ body {
 }
 
 .container {
-  padding: 3rem 3.5rem 0 22.5rem !important;
+  min-height: 0;
+  padding: 2.0rem 3.5rem 0 22.5rem !important;
+
+  @media (height > 296mm) {
+    padding-top: 3rem !important;
+  }
 
   .content {
     padding: 0 !important;
@@ -168,13 +174,15 @@ body {
       }
 
       .experience-skills {
-        margin: 0 -0.95rem 0.25rem 0.75rem !important;
+        // margin: 0 -0.95rem 0.25rem 0.75rem !important;
+        margin: -0.4rem -0.95rem 0.1rem 0.75rem !important;
         padding: 0.1rem 0.75rem 0.15rem 0 !important;
       }
     }
 
     .experience-project {
       width: 25% !important;
+      margin-top: -.25rem !important;
 
       .project-imgs {
         display: none !important;
@@ -193,6 +201,10 @@ body {
         margin-top: .2rem !important;
       }
     }
+  }
+
+  .experience.with-imgs {
+    min-height: unset !important;
   }
 }
 
