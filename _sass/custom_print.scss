@@ -28,10 +28,6 @@
   margin: 0;
 }
 
-.no-print {
-  display: none !important;
-}
-
 * {
   -webkit-transition: none !important;
   transition: none !important;
@@ -101,7 +97,7 @@ body {
     flex-direction: column !important;
 
     a {
-      display: flex !important;
+      display: flex;
       flex-direction: row !important;
       align-items: center !important;
 
@@ -198,4 +194,8 @@ body {
       }
     }
   }
+}
+
+.no-print {
+  display: none !important;
 }

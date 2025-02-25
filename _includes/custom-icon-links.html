@@ -17,7 +17,7 @@
 {% endif %}
 {% if site.instagram_username %}
   <a id="instagram-link"
-    class="icon" title="Instagram Profile" aria-label="Instagram Profile"
+    class="icon no-print" title="Instagram Profile" aria-label="Instagram Profile"
     username="{{ site.instagram_username }}"
     href="https://www.instagram.com/{{ site.instagram_username }}">
     {% include svg/instagram_logo.svg %}
@@ -25,7 +25,7 @@
 {% endif %}
 {% if site.bluesky_username %}
   <a id="bluesky-link"
-    class="icon" title="Bluesky Profile" aria-label="Bluesky Profile"
+    class="icon no-print" title="Bluesky Profile" aria-label="Bluesky Profile"
     username="{{ site.bluesky_username }}"
     href="https://bsky.app/profile/{{ site.bluesky_username }}">
     {% include svg/bluesky_logo.svg %}
