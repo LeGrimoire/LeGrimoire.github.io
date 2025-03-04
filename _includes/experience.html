@@ -1,109 +1,111 @@
-<h3>{{ include.position }}</h3>
-<div class="experience {% if include.project_img %}with-imgs{%- endif -%}">
-  {%- if include.project -%}
-    <div class="experience-project">
-      {%- if include.project_img -%}
-        <div class="project-imgs">
-          {%- assign imgs = include.project_img | split: ", " -%}
-          {%- for img in imgs -%}
-            {%- include image.html name=img -%}
-          {%- endfor -%}
+<div>
+  <h3>{{ include.position }}</h3>
+  <div class="experience {% if include.project_img %}with-imgs{%- endif -%}">
+    {%- if include.project -%}
+      <div class="experience-project">
+        {%- if include.project_img -%}
+          <div class="project-imgs">
+            {%- assign imgs = include.project_img | split: ", " -%}
+            {%- for img in imgs -%}
+              {%- include image.html name=img -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <div class="project-header">
+          <h4>{{ include.project }}</h4>
+
+          <div class="project-links">
+            {%- assign links = include.project_links | split: ", " -%}
+            {%- for link_info in links -%}
+              {%- assign link_array = link_info | split: "|" -%}
+              {%- assign icon = link_array[1] -%}
+              <a class="icon project-link" title="{{- link_array[0] -}}" aria-label="{{- link_array[0] -}}"
+                href="{{- link_array[2] -}}">
+                {%- include {{ icon }} -%}
+              </a>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="project-description">
+          {{- include.project_desc -}}
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="experience-core">
+      {%- if include.skills -%}
+        <div class="experience-skills no-mobile">
+          <ul>
+            {%- assign accent = true -%}
+            {%- assign skills = include.skills | split: ", " -%}
+            {%- for skill in skills -%}
+              {%- if skill == "" -%}
+                {%- assign accent = false -%}
+                {%- continue -%}
+              {%- endif -%}
+              <li {% if accent %}class="accent"{% endif %}>{{- skill }}{%-  unless forloop.last -%}</li>{%- endunless -%}
+            {%- endfor -%}
+          </ul>
         </div>
       {%- endif -%}
 
-      <div class="project-header">
-        <h4>{{ include.project }}</h4>
+      <div>
+        <div class="experience-company">
+          {%- if include.company > "" -%}<strong>{{ include.company }}</strong> - {% endif -%}
+          {%- if include.begin and include.end -%}
+            {{ include.begin }} to {{ include.end }} {% if include.length -%}<span class="experience-length">({{ include.length }})</span>{%- endif -%}
+          {%- elsif include.begin -%}
+            {{ include.begin }}
+          {%- else -%}
+            {{ include.length }}
+          {%- endif -%}
+        </div>
 
-        <div class="project-links">
-          {%- assign links = include.project_links | split: ", " -%}
-          {%- for link_info in links -%}
-            {%- assign link_array = link_info | split: "|" -%}
-            {%- assign icon = link_array[1] -%}
-            <a class="icon project-link" title="{{- link_array[0] -}}" aria-label="{{- link_array[0] -}}"
-              href="{{- link_array[2] -}}">
-              {%- include {{ icon }} -%}
-            </a>
+        <div class="experience-location">
+          {{- include.location }}{%- if include.location > "" and include.is_remote %} - {% endif -%}{%- if include.is_remote -%}<span class="experience-remote">Remote</span>{%- endif -%}
+        </div>
+
+        <div class="experience-description">
+          {%- comment -%} Add &nbsp; after 1 or 2 letter words and "the" {%- endcomment -%}
+          {%- assign words = include.desc | split:" " -%}
+          {%- assign unbreakable = "the, its" -%}
+          {%- assign breakable = "to, be, of" -%}
+          {%- assign desc = "<p>" -%}
+          {%- for w in words -%}
+            {%- if forloop.last -%}
+              {%- capture desc -%}{{ desc }}{{ w }}</p>{%- endcapture -%}
+            {%- elsif w.size < 3 or unbreakable contains w -%}
+              {% unless breakable contains w %}
+                {%- capture desc -%}{{ desc }}{{ w }}&nbsp;{%- endcapture -%}
+              {% else %}
+                {%- capture desc -%}{{ desc }}{{ w }} {% endcapture -%}
+              {%- endunless -%}
+            {%- else -%}
+              {%- capture desc -%}{{ desc }}{{ w }} {% endcapture -%}
+            {%- endif -%}
           {%- endfor -%}
+          {%- assign desc = desc | replace:"<br>", "</p><p>" -%}
+          {{- desc -}}
         </div>
       </div>
 
-      <div class="project-description">
-        {{- include.project_desc -}}
-      </div>
+      {%- if include.skills -%}
+        <div class="experience-skills mobile">
+          <ul>
+            {%- assign accent = true -%}
+            {%- assign skills = include.skills | split: ", " -%}
+            {%- for skill in skills -%}
+              {%- if skill == "" -%}
+                {%- assign accent = false -%}
+                {%- continue -%}
+              {%- endif -%}
+              <li {% if accent %}class="accent"{% endif %}>{{- skill }}{%-  unless forloop.last -%}</li>{%- endunless -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
     </div>
-  {%- endif -%}
-
-  <div class="experience-core">
-    {%- if include.skills -%}
-      <div class="experience-skills no-mobile">
-        <ul>
-          {%- assign accent = true -%}
-          {%- assign skills = include.skills | split: ", " -%}
-          {%- for skill in skills -%}
-            {%- if skill == "" -%}
-              {%- assign accent = false -%}
-              {%- continue -%}
-            {%- endif -%}
-            <li {% if accent %}class="accent"{% endif %}>{{- skill }}{%-  unless forloop.last -%}</li>{%- endunless -%}
-          {%- endfor -%}
-        </ul>
-      </div>
-    {%- endif -%}
-
-    <div>
-      <div class="experience-company">
-        {%- if include.company > "" -%}<strong>{{ include.company }}</strong> - {% endif -%}
-        {%- if include.begin and include.end -%}
-          {{ include.begin }} to {{ include.end }} {% if include.length -%}<span class="experience-length">({{ include.length }})</span>{%- endif -%}
-        {%- elsif include.begin -%}
-          {{ include.begin }}
-        {%- else -%}
-          {{ include.length }}
-        {%- endif -%}
-      </div>
-
-      <div class="experience-location">
-        {{- include.location }}{%- if include.location > "" and include.is_remote %} - {% endif -%}{%- if include.is_remote -%}<span class="experience-remote">Remote</span>{%- endif -%}
-      </div>
-
-      <div class="experience-description">
-        {%- comment -%} Add &nbsp; after 1 or 2 letter words and "the" {%- endcomment -%}
-        {%- assign words = include.desc | split:" " -%}
-        {%- assign unbreakable = "the, its" -%}
-        {%- assign breakable = "to, be, of" -%}
-        {%- assign desc = "<p>" -%}
-        {%- for w in words -%}
-          {%- if forloop.last -%}
-            {%- capture desc -%}{{ desc }}{{ w }}</p>{%- endcapture -%}
-          {%- elsif w.size < 3 or unbreakable contains w -%}
-            {% unless breakable contains w %}
-              {%- capture desc -%}{{ desc }}{{ w }}&nbsp;{%- endcapture -%}
-            {% else %}
-              {%- capture desc -%}{{ desc }}{{ w }} {% endcapture -%}
-            {%- endunless -%}
-          {%- else -%}
-            {%- capture desc -%}{{ desc }}{{ w }} {% endcapture -%}
-          {%- endif -%}
-        {%- endfor -%}
-        {%- assign desc = desc | replace:"<br>", "</p><p>" -%}
-        {{- desc -}}
-      </div>
-    </div>
-
-    {%- if include.skills -%}
-      <div class="experience-skills mobile">
-        <ul>
-          {%- assign accent = true -%}
-          {%- assign skills = include.skills | split: ", " -%}
-          {%- for skill in skills -%}
-            {%- if skill == "" -%}
-              {%- assign accent = false -%}
-              {%- continue -%}
-            {%- endif -%}
-            <li {% if accent %}class="accent"{% endif %}>{{- skill }}{%-  unless forloop.last -%}</li>{%- endunless -%}
-          {%- endfor -%}
-        </ul>
-      </div>
-    {%- endif -%}
   </div>
 </div>
