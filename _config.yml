@@ -21,7 +21,7 @@
 title: Grégoire André
 email: gregoir.andre@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Gameplay, UI and Tool Programmer<br>Open to freelance or part-time work<br>8+ years of experience
+  Gameplay, UI and Tool Programmer<br><span class="no-print">Open to work<br></span>8+ years of experience
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: https://legrimoire.github.io # the base hostname & protocol for your site, e.g. http://example.com
 bluesky_username: legrimoire.bsky.social
