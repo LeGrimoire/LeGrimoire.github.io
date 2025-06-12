@@ -354,6 +354,7 @@ a svg,
   h2 {
     font-size: 1.5rem;
     margin-top: 1.5rem;
+    color: $title-color-1;
 
     @media (min-width: $content-breakpoint) {
       font-size: 1.4rem;
@@ -363,6 +364,7 @@ a svg,
   h3 {
     font-size: 1.2rem;
     margin: 1.5rem 0 0.3rem;
+    color: $title-color-2;
     // position: relative;
     // background: #ffffffcc;
     // border-radius: 2px;
